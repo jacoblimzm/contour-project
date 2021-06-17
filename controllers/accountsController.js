@@ -17,5 +17,29 @@ easily be swapped out for a HTTP Web API.
 5. /accounts/4/transactions → transactions-4.json
 */
 
+account.get("/accounts", async (req, res) => {
+
+    try {
+        /*
+        API can be swapped in here with a fetch or axios call.
+        */
+
+        res.status(200).send({
+          message: "Request Successful",
+          success: true,
+          status_code: 200,
+          data: accounts,
+        });
+    
+      } catch (err) {
+        res.status(500).send({
+          message: "Unable to get accounts information. Please try again.",
+          success: false,
+          status_code: 500,
+        });
+    }
+
+})
+
 
 module.exports = account
