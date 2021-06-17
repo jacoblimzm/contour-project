@@ -39,6 +39,7 @@ account.get("/accounts", async (req, res) => {
     }
 
 })
+
 account.get("/accounts/:id/transactions", async (req, res) => {
 
     try {
@@ -67,6 +68,29 @@ account.get("/accounts/:id/transactions", async (req, res) => {
 
 })
 
+account.get("/accounts/:id", async (req, res) => {
+
+    try {
+        /*
+        API can be swapped in here with a fetch or axios call.
+        */
+        const accountId = parseInt(req.params.id);
+       const individualAccount = accounts.filter(account => account.id === accountId)
+       res.status(200).send({
+        message: "Request Successful",
+        success: true,
+        status_code: 200,
+        data: individualAccount,
+      });
+
+    } catch(err) {
+        res.status(500).send({
+            message: "Unable to get account information. Please try again.",
+            success: false,
+            status_code: 500,
+          });
+    }
+})
 
 
 module.exports = account
