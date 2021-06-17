@@ -23,7 +23,6 @@ account.get("/accounts", async (req, res) => {
         /*
         API can be swapped in here with a fetch or axios call.
         */
-
         res.status(200).send({
           message: "Request Successful",
           success: true,
@@ -40,6 +39,34 @@ account.get("/accounts", async (req, res) => {
     }
 
 })
+account.get("/accounts/:id/transactions", async (req, res) => {
+
+    try {
+        /*
+        API can be swapped in here with a fetch or axios call.
+        */
+       const accountId = req.params.id;
+
+        res.status(200).send({
+          message: "Request Successful",
+          success: true,
+          status_code: 200,
+          data: accountId === "1" ? account1
+          : accountId === "2" ? account2
+          : accountId === "3" ? account3
+          : account4
+        });
+    
+      } catch (err) {
+        res.status(500).send({
+          message: "Unable to get transaction information. Please try again.",
+          success: false,
+          status_code: 500,
+        });
+    }
+
+})
+
 
 
 module.exports = account
