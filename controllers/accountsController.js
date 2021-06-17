@@ -48,14 +48,24 @@ account.get("/accounts/:id/transactions", async (req, res) => {
         */
        const accountId = req.params.id;
 
+       const sortTransactions = (arr) => {
+         return arr.sort( (a, b) => {
+            const aDateString = a.transaction_date.slice(0, 19);
+            const bDateString = b.transaction_date.slice(0, 19);
+            const aDate = new Date(aDateString);
+            const bDate = new Date(bDateString);
+            return bDate - aDate
+        })
+
+       } 
         res.status(200).send({
           message: "Request Successful",
           success: true,
           status_code: 200,
-          data: accountId === "1" ? account1
-          : accountId === "2" ? account2
-          : accountId === "3" ? account3
-          : account4
+          data: accountId === "1" ? sortTransactions(account1)
+          : accountId === "2" ? sortTransactions(account2)
+          : accountId === "3" ? sortTransactions(account3)
+          : sortTransactions(account4)
         });
     
       } catch (err) {
