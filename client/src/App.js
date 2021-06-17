@@ -1,13 +1,21 @@
-import './App.css';
+import "./App.css";
 import { Switch, Route } from "react-router-dom";
-import NavBar from './components/NavBar';
-import AccountHome from './components/AccountHome';
+import NavBar from "./components/NavBar";
+import AccountHome from "./components/AccountHome";
+import TransactionListings from "./components/TransactionListings";
 
 function App() {
   return (
     <div className="container flex font-body">
-    <NavBar />
-    <AccountHome />
+      <NavBar />
+      <Switch>
+        <Route exact path="/">
+          <AccountHome />
+        </Route>
+        <Route path="/transactions/:id">
+          <TransactionListings />
+        </Route>
+      </Switch>
     </div>
   );
 }
