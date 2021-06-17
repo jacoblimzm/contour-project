@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import AccountOverview from "./AccountOverview"
 
 const AccountHome = () => {
   const [accountsState, setAccountsState] = useState([]);
@@ -35,28 +36,27 @@ const AccountHome = () => {
     getAccountsInfo();
   }, []);
   return (
-    <div className="flex-1 divide-y-2 divide-blue-500 px-2 flex-col bg-purple-100 ">
+    <div className="flex-auto divide-y-2 divide-blue-500 px-2 flex-col bg-purple-100 ">
       <div className="text-5xl font-bold p-10">Accounts</div>
 
-      <div className="py-4">
+      <div className="p-4">
         <h1 className="text-3xl">Savings</h1>
-        <div className="flex flex-row justify-between m-4 border-b-1">
-          <h2>{savingsState[0].account_name}</h2>
-          <h2>{savingsState[0].account_type}</h2>
-          <h2>{savingsState[0].currency}</h2>
-          <h2>{savingsState[0].balance}</h2>
-        </div>
-        <div className="flex flex-row justify-between m-4 border-b-1">
-          <h2>{savingsState[0].account_name}</h2>
-          <h2>{savingsState[0].account_type}</h2>
-          <h2>{savingsState[0].currency}</h2>
-          <h2>{savingsState[0].balance}</h2>
-        </div>
+        {savingsState.map( savings => {
+            return <AccountOverview key={savings.id} {...savings} />
+        })}
       </div>
-
-      
-      <div className="text-2xl py-4">Settlement</div>
-      <div className="text-2xl py-4">Credit Card</div>
+      <div className="p-4">
+        <h1 className="text-3xl">Securities</h1>
+        {settlementsState.map( savings => {
+            return <AccountOverview key={savings.id} {...savings} />
+        })}
+      </div>
+      <div className="p-4">
+        <h1 className="text-3xl">Credit Card</h1>
+        {ccState.map( savings => {
+            return <AccountOverview key={savings.id} {...savings} />
+        })}
+      </div>
     </div>
   );
 };
