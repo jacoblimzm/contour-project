@@ -13,7 +13,7 @@ const AccountHeader = ( {account_name, currency, account_number, balance, is_act
       <div className="text-2xl font-bold p-10">
         <h2 className="">
           Balance: ${balance}
-          <span className="block text-gray-500">
+          <span className={`p-2.5 block leading-5 font-semibold rounded-full max-w-max ${is_active ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
             {is_active
               ? "Active"
               : "Not Active"}
