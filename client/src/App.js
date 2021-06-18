@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import AccountHome from "./components/AccountHome";
 import TransactionListings from "./components/TransactionListings";
+import TransactionDetail from "./components/TransactionDetail";
 
 function App() {
   return (
@@ -11,6 +12,9 @@ function App() {
       <Switch>
         <Route exact path="/">
           <AccountHome />
+        </Route>
+        <Route path="/transactions/:accountId/detail/:transactionId">
+          <TransactionDetail />
         </Route>
         <Route path="/transactions/:id">
           <TransactionListings />
