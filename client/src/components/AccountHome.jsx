@@ -25,7 +25,7 @@ const AccountHome = () => {
           })
         );
         setCcState(
-          accountsState.filter((account) => {
+          accounts.filter((account) => {
             return account.account_type === "cc";
           })
         );
