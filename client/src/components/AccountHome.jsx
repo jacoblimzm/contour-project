@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import AccountOverview from "./AccountOverview"
 
 const AccountHome = () => {
-  const [accountsState, setAccountsState] = useState([]);
+
   const [savingsState, setSavingsState] = useState([]);
   const [settlementsState, setSettlementsState] = useState([]);
   const [ccState, setCcState] = useState([]);
@@ -13,7 +13,7 @@ const AccountHome = () => {
       try {
         const response = await axios.get("/api/accounts");
         const accounts = response.data.data;
-        setAccountsState(accounts);
+
         setSavingsState(
           accounts.filter((account) => {
             return account.account_type === "savings";

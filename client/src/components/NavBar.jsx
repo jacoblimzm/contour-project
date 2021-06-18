@@ -17,10 +17,10 @@ const NavBar = () => {
             <Link to="/">Accounts</Link>
           </li>
           <li className="py-2.5 px-4 hover:bg-blue-500 hover:text-white rounded">
-            <a href="#">Settings</a>
+            <Link to="/">Settings</Link>
           </li>
           <li className="py-2.5 px-4 hover:bg-blue-500 hover:text-white rounded">
-            <a href="#">Help</a>
+            <Link to="/">Help</Link>
           </li>
         </ul>
       </nav>
