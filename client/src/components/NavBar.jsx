@@ -7,7 +7,7 @@ const NavBar = () => {
       <div className="flex">
         <div className="mx-auto space-y-2 mb-4">
           <UserIcon className="w-24 h-24 text-white" />
-          <p className="text-2xl font-bold">Xanpool</p>
+          <p className="text-2xl font-bold">Contour</p>
         </div>
       </div>
 
