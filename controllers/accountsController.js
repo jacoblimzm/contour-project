@@ -45,8 +45,6 @@ account.get("/accounts/:id/transactions/:transactionId", async (req, res) => {
     const accountId = parseInt(req.params.id);
     const transactionId = parseInt(req.params.transactionId);
 
-    console.log("accountid", accountId);
-    console.log("transactionid", transactionId);
     let transaction = [];
     if (accountId === 1) {
       transaction = account1.filter(
