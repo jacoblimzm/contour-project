@@ -4,22 +4,21 @@
 
 1. Clone the repository inside a project folder
 ```
-$ git clone 
+$ git clone https://github.com/jacoblimzm/contour-project.git
 ```
-2. Install all dependencies from root project folder. Then navigate inside `client` folder and run command **again**
+2. Install all dependencies from root project folder with the command below. Then navigate inside `client` folder and run command **again**
 ```
 $ npm install
 ```
-1. Create an `.env` file in root project folder with variable `PORT`. 
+3. Create an `.env` file in root project folder with variable `PORT`. 
 ```javascript
 PORT=4000 // default
 ```  
-5. Start backend server (root project folder)
+4. Start backend server (root project folder)
 ```
 $ node server.js
 ```
 'server is now listening at port 4000' should appear in console.
-
 6. Start frontend (navigate into `client` folder)
 ```
 $ npm start
