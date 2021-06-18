@@ -1,4 +1,5 @@
 import { UserIcon } from "@heroicons/react/solid";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
@@ -11,17 +12,17 @@ const NavBar = () => {
       </div>
 
       <nav>
-          <ul>
-              <li  className="py-2.5 px-4 hover:bg-blue-500 hover:text-white rounded">
-                  <a href="#">Accounts</a>
-              </li>
-              <li  className="py-2.5 px-4 hover:bg-blue-500 hover:text-white rounded">
-                  <a href="#">Settings</a>
-              </li>
-              <li  className="py-2.5 px-4 hover:bg-blue-500 hover:text-white rounded">
-                  <a href="#">Contact</a>
-              </li>
-          </ul>
+        <ul>
+          <li className="py-2.5 px-4 hover:bg-blue-500 hover:text-white rounded">
+            <Link to="/">Accounts</Link>
+          </li>
+          <li className="py-2.5 px-4 hover:bg-blue-500 hover:text-white rounded">
+            <a href="#">Settings</a>
+          </li>
+          <li className="py-2.5 px-4 hover:bg-blue-500 hover:text-white rounded">
+            <a href="#">Help</a>
+          </li>
+        </ul>
       </nav>
     </div>
   );
